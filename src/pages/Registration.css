@@ -1,0 +1,206 @@
+/* Registration page styles — dark/neon esports theme */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Teko:wght@400;700&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+/* Paragraphs should use Nunito Sans for better readability */
+p { font-family: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: inherit; line-height: 1.55 }
+
+/* Keep headings and header-like UI elements on Teko */
+h1,h2,h3,h4,h5,h6, .series, .register-now, label, .player h3, .info-block h2 { font-family: 'Teko', sans-serif }
+.reg-page {
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(1200px 400px at 10% 10%, rgba(0,0,0,0.12), transparent 10%),
+              linear-gradient(180deg, rgba(6,6,8,0.6), rgba(4,2,2,0.6));
+  padding-bottom: 4rem;
+  font-smooth: always;
+}
+
+.reg-hero {
+  background-image: radial-gradient(800px 240px at 10% 12%, var(--accent-dim), transparent 8%),
+                    linear-gradient(180deg, rgba(6,6,8,0.6), rgba(6,0,0,0.7));
+  padding: 2rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.reg-hero-inner { max-width: 980px; margin: 0 auto; padding: 0 1rem; box-sizing: border-box }
+.reg-hero-inner.grid { display: grid; grid-template-columns: 1fr 360px; gap: 1rem; align-items: center }
+.hero-left { padding: 1rem }
+.brand-wrap { color: #fff; opacity: 0.95 }
+.logo-mark { font-weight: 800; color: #fff; background: rgba(0,0,0,0.35); display: inline-block; padding: 6px 10px; border-radius: 6px; letter-spacing: 2px; font-family: 'Teko', sans-serif; font-size: 1.1rem }
+.series { margin: 0.6rem 0 0 0; font-size: 1.6rem; color: #f3f6ff; font-family: 'Teko', sans-serif }
+.event { margin: 0.25rem 0 0 0; color: var(--accent); font-weight: 700; font-family: 'Teko', sans-serif }
+
+.cta-wrap { margin-top: 1.2rem }
+.register-now { font-size: 3rem; margin: 0; color: #fff; letter-spacing: 1px; font-family: 'Teko', sans-serif }
+.register-now span { color: var(--accent) }
+.ends { margin: 0.4rem 0 0 0; color: rgba(233,242,255,0.6) }
+
+.reg-container {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Make sizing predictable and prevent grid children overflow */
+*, *::before, *::after { box-sizing: border-box }
+
+.reg-form { box-sizing: border-box }
+
+.reg-form {
+  background: linear-gradient(180deg, #07080e, #07080e);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 30px rgba(6,8,18,0.6);
+}
+
+.section-row { margin-bottom: 1rem }
+.section-row .full { display: block }
+label { display: block; margin: 0.6rem 0;font-family: 'Teko', sans-serif;}
+label input { width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); color: inherit }
+/* Boxicons import (replace inline SVG icons with Boxicons for better visuals) */
+
+/* Inputs that show an icon on the left (using Boxicons <i> elements) */
+label { position: relative }
+.input-wrap { position: relative }
+.input-wrap .label-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: rgba(233,242,255,0.45); font-size: 18px; pointer-events: none }
+.input-wrap input.icon { padding-left: 2.6rem; background-image: none }
+
+/* generic look for placeholder text */
+input::placeholder { color: rgba(233,242,255,0.4) }
+
+/* small helper to ensure inputs don't overflow their container */
+input { min-width: 0 }
+
+/* Focus styles: use a thin red outline instead of the default blue ring */
+input:focus, input:focus-visible, textarea:focus, select:focus {
+  outline: 1px solid #ff4444;
+  outline-offset: 2px;
+  box-shadow: none;
+  border-color: rgba(255,68,68,0.12);
+}
+
+/* Highlight the icon when its input is focused */
+.input-wrap:focus-within .label-icon { color: #ffb3b3 }
+label small.err { color: #ffb7b7; display: block; margin-top: 0.25rem }
+
+.players-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; border: none }
+.players-grid legend { padding: 0 0.4rem; color: var(--accent) }
+.player { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006)); padding: 0.75rem; border-radius: 8px; border: 1px dashed rgba(255,255,255,0.04); box-shadow: 0 6px 18px rgba(0,0,0,0.6) }
+.player { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006)); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(255,255,255,0.04); box-shadow: 0 6px 18px rgba(0,0,0,0.6); width:100%; min-width:0; overflow:hidden }
+.player h3 { margin: 0 0 0.5rem 0; font-size: 1.05rem ;font-family: 'Teko', sans-serif}
+
+.subs { margin-top: 1rem }
+.subs .sub { /* make substitutes visually consistent with player cards */
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px dashed rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  width: 100%;
+  min-width: 0;
+}
+
+.form-actions { display: flex; align-items: center; gap: 1rem; margin-top: 1rem }
+.primary { color: #fff; padding: 0.75rem 1.2rem; border-radius: 10px; border: none; cursor: pointer; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,0.5); background-size: 300% 100%; transition: transform 160ms ease, box-shadow 160ms ease }
+.primary {
+  background-image: linear-gradient(90deg, var(--accent) 0%, #ff4444 30%, #ff4444 60%);
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+}
+.primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,60,60,0.12) }
+.primary:active { transform: translateY(-1px) }
+
+@keyframes rainbowShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+.primary.animated { animation: rainbowShift 3.5s linear infinite }
+.hero-img { display: block; width: 100%; height: auto; max-width: 100%; object-fit: contain; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px }
+.reg-hero { position: relative; overflow: visible }
+.reg-hero-inner.grid { position: relative; z-index: 2 }
+.reg-page, .reg-container, .reg-hero-inner, .reg-hero-inner.grid, .hero-left, .info-block, .prize-panel, .players-grid, .player, .sub { text-align: left }
+/* Apply left alignment to common inline text elements and labels */
+label, p, h1, h2, h3, h4, h5, h6, .series, .register-now, .status, .ends { text-align: left }
+/* Prize header/total should be left-aligned even when the panel is centered */
+.prize-header, .prize-total { text-align: left }
+.status { margin: 0; color: var(--accent) }
+.req { color: #ff9b9b }
+
+/* Entrance animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+@keyframes floaty {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(-6px) }
+  100% { transform: translateY(0) }
+}
+.reg-hero-inner.grid > * { animation: fadeUp 520ms ease both }
+.prize-row { animation: fadeUp 600ms ease both }
+.player, .sub { transition: transform 220ms ease, box-shadow 220ms ease }
+.player:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6) }
+
+/* Prize highlight floating */
+.prize-total { animation: floaty 3.8s ease-in-out infinite }
+
+@media (max-width: 900px) {
+  .reg-hero-inner.grid { grid-template-columns: 1fr; text-align: left }
+  .players-grid { grid-template-columns: 1fr }
+  .reg-container { padding: 0 0.5rem }
+  .register-now { font-size: 2.2rem }
+}
+
+/* Make hero banner a bit smaller (80%) on wide screens, full width on small screens */
+.hero-img {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero-img { width: 100%; }
+}
+
+/* Prize panel styles */
+.hero-right { display: flex; justify-content: center }
+.prize-panel { width: 100%; background: rgba(255,255,255,0.03); border-radius: 10px; padding: 1rem; box-shadow: 0 6px 30px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.04) }
+.prize-header { color: #dbe8ff; font-weight: 700; font-size: 0.9rem; text-align: center }
+.prize-total { text-align: center; font-size: 2.2rem; font-weight: 800; color: #e9f2ff; margin: 0.6rem 0; background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding: 0.8rem; border-radius: 8px }
+.prize-list { margin-top: 0.8rem }
+.prize-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem; border-top: 1px solid rgba(255,255,255,0.02) }
+.prize-row .label { color: #dbe8ff; font-weight: 700 }
+.prize-row .value { color: #dbe8ff; font-weight: 800 }
+.prize-row.champion { background: linear-gradient(90deg, rgba(255,35,80,0.06), rgba(255,35,80,0.02)); color: #fff }
+.prize-row.champion .value { color: #ff4444 }
+
+/* decorative corner accents */
+.reg-page::before,
+.reg-page::after { content: ""; position: absolute; pointer-events: none }
+
+/* Info block like top of a Google Form */
+.info-block-wrap { max-width: 980px; margin: 1.2rem auto; padding: 0 1rem }
+.info-block { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-left: 6px solid var(--accent); padding: 1rem 1.25rem; border-radius: 8px; color: var(--text); box-shadow: 0 8px 30px rgba(0,0,0,0.6) }
+.info-block h2 { margin: 0 0 0.35rem 0; font-family: 'Teko', sans-serif; font-size: 1.25rem; letter-spacing: 0.6px;font-family: 'Teko', sans-serif; }
+.info-block p { margin: 0.35rem 0; color: rgba(233,242,255,0.78);font-family: 'Nunito Sans', sans-serif; }
+.info-block .rule-link { color: var(--accent); font-weight: 700; text-decoration: underline }
+
+/* Styled rulebook button */
+.rule-btn {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 26px rgba(6,8,18,0.6);
+  transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+}
+.rule-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255,68,68,0.12); opacity: 0.98 }
+.rule-btn:active { transform: translateY(-1px) }
+.rule-btn:focus { outline: 1px solid #ff4444; outline-offset: 2px }
+
+
